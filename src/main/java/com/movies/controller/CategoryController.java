@@ -24,4 +24,8 @@ public class CategoryController {
         return categoryService.saveCategory(category);
     }
 
+    @GetMapping("/{id}")
+    public Category getCategoryById(@PathVariable("id") Long id) {
+        return categoryService.getCategoryById(id).orElse(null);
+    }
 }
