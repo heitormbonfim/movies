@@ -17,15 +17,15 @@ public class CategoryService {
         return categoryRepository.findAll();
     }
 
-    public Category saveCategory(Category category) {
+    public Category save(Category category) {
         return categoryRepository.save(category);
     }
 
-    public Optional<Category> getCategoryById(Long id) {
+    public Optional<Category> findById(Long id) {
         return  categoryRepository.findById(id);
     }
 
-    public String deleteCategoryById(Long id) {
+    public String deleteById(Long id) {
         categoryRepository.deleteById(id);
         return "Category deleted";
     }

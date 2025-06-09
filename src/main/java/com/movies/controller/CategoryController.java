@@ -32,14 +32,14 @@ public class CategoryController {
     @PostMapping
     public ResponseEntity<CategoryResponse> saveCategory(@RequestBody CategoryRequest request) {
         Category newCategory = CategoryMapper.toCategory(request);
-        Category savedCategory = categoryService.saveCategory(newCategory);
+        Category savedCategory = categoryService.save(newCategory);
         CategoryResponse categorySaved = CategoryMapper.toCategoryResponse(savedCategory);
         return ResponseEntity.status(HttpStatus.CREATED).body(categorySaved);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<CategoryResponse> getCategoryById(@PathVariable("id") Long id) {
-        Optional<Category> optCategory = categoryService.getCategoryById(id);
+        Optional<Category> optCategory = categoryService.findById(id);
         if (optCategory.isPresent()) {
             CategoryResponse categoryFound = CategoryMapper.toCategoryResponse(optCategory.get());
             return ResponseEntity.ok(categoryFound);
@@ -49,7 +49,7 @@ public class CategoryController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteCategory(@PathVariable("id") Long id) {
-        categoryService.deleteCategoryById(id);
+        categoryService.deleteById(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }
