@@ -14,6 +14,6 @@ public record MovieResponse(
     LocalDate releaseDate,
     double rating,
     List<CategoryResponse> categories,
-    List<StreamingResponse> streaming
+    List<StreamingResponse> streamings
 ) {
 }

@@ -9,6 +9,6 @@ public record MovieRequest(
         LocalDate releaseDate,
         double rating,
         List<Long> categories,
-        List<Long> streaming
+        List<Long> streamings
 ) {
 }
