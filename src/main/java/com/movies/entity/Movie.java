@@ -54,5 +54,5 @@ public class Movie {
             joinColumns = @JoinColumn(name = "movie_id"),
             inverseJoinColumns = @JoinColumn(name = "streaming_id")
     )
-    private List<Streaming> streamings;
+    private List<Streaming> streaming;
 }
