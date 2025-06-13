@@ -20,7 +20,7 @@ public class MovieMapper {
                 .map(categoryId -> Category.builder().id(categoryId).build())
                 .toList();
 
-        List<Streaming> streamings = movieRequest.streaming().stream()
+        List<Streaming> streamings = movieRequest.streamings().stream()
                 .map(streamingId -> Streaming.builder().id(streamingId).build())
                 .toList();
 
@@ -30,7 +30,7 @@ public class MovieMapper {
                 .releaseDate(movieRequest.releaseDate())
                 .rating(movieRequest.rating())
                 .categories(categories)
-                .streaming(streamings)
+                .streamings(streamings)
                 .build();
     }
 
@@ -40,7 +40,7 @@ public class MovieMapper {
                 .map(CategoryMapper::toCategoryResponse)
                 .toList();
 
-        List<StreamingResponse> streamings = movie.getStreaming().stream()
+        List<StreamingResponse> streamings = movie.getStreamings().stream()
                 .map(StreamingMapper::toStreamingResponse)
                 .toList();
 
@@ -51,7 +51,7 @@ public class MovieMapper {
                 .releaseDate(movie.getReleaseDate())
                 .rating(movie.getRating())
                 .categories(categories)
-                .streaming(streamings)
+                .streamings(streamings)
                 .build();
     }
 }
