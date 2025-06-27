@@ -54,4 +54,10 @@ public class MovieController {
                 moviesByCategory.stream().map(MovieMapper::toMovieResponse).toList()
         );
     }
+
+    @DeleteMapping("{id}")
+    public ResponseEntity<Void> deleteMovieById(@PathVariable Long id) {
+        movieService.delete(id);
+        return ResponseEntity.noContent().build();
+    }
 }
