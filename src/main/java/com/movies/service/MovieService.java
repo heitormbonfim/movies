@@ -58,6 +58,14 @@ public class MovieService {
         return Optional.empty();
     }
 
+    public List<Movie> findMoviesByCategory(Long categoryId) {
+        return movieRepository.findByCategoriesId(categoryId);
+    }
+
+    public void delete(Long id) {
+        movieRepository.deleteById(id);
+    }
+
     private List<Category> findCategories(List<Category> categories) {
         List<Category> categoriesFound = new ArrayList<>();
         categories.forEach(category -> {
