@@ -1,0 +1,716 @@
+{
+  "name": "Movies",
+  "version": "1",
+  "items": [
+    {
+      "type": "folder",
+      "name": "Documentation",
+      "filename": "Documentation",
+      "root": {
+        "meta": {
+          "name": "Documentation"
+        }
+      },
+      "items": [
+        {
+          "type": "http",
+          "name": "[category] add category",
+          "filename": "[category] add category.bru",
+          "seq": 2,
+          "settings": {},
+          "tags": [],
+          "request": {
+            "url": "{{localhost}}/movies/category",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json",
+                "enabled": true
+              },
+              {
+                "name": "User-Agent",
+                "value": "insomnia/10.3.1",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"name\": \"Drama\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{token}}"
+              }
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "[category] list category by id",
+          "filename": "[category] list category by id.bru",
+          "seq": 3,
+          "settings": {},
+          "tags": [],
+          "request": {
+            "url": "{{localhost}}/movies/category/5",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "User-Agent",
+                "value": "insomnia/10.3.1",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{token}}"
+              }
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "[global] api health",
+          "filename": "[global] api health.bru",
+          "seq": 17,
+          "settings": {},
+          "tags": [],
+          "request": {
+            "url": "{{localhost}}/health",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "User-Agent",
+                "value": "insomnia/11.3.0",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "[movie] get movie by id",
+          "filename": "[movie] get movie by id.bru",
+          "seq": 11,
+          "settings": {},
+          "tags": [],
+          "request": {
+            "url": "{{localhost}}/movies/movie/4",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "User-Agent",
+                "value": "insomnia/10.3.1",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{token}}"
+              }
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "[movie] add movie",
+          "filename": "[movie] add movie.bru",
+          "seq": 9,
+          "settings": {},
+          "tags": [],
+          "request": {
+            "url": "{{localhost}}/movies/movie",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json",
+                "enabled": true
+              },
+              {
+                "name": "User-Agent",
+                "value": "insomnia/10.3.1",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"title\": \"Chico Rola\",\n  \"description\": \"Ninja\",\n  \"releaseDate\": \"27/01/2012\",\n  \"rating\": 10,\n  \"categories\": [\n    4\n  ],\n  \"streamings\": [\n    1, 2, 3, 4\n  ]\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{token}}"
+              }
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "[category] list all categories",
+          "filename": "[category] list all categories.bru",
+          "seq": 1,
+          "settings": {},
+          "tags": [],
+          "request": {
+            "url": "{{localhost}}/movies/category",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "User-Agent",
+                "value": "insomnia/10.3.1",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{token}}"
+              }
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "[category] delete category by id",
+          "filename": "[category] delete category by id.bru",
+          "seq": 4,
+          "settings": {},
+          "tags": [],
+          "request": {
+            "url": "{{localhost}}/movies/category/4",
+            "method": "DELETE",
+            "headers": [
+              {
+                "name": "User-Agent",
+                "value": "insomnia/10.3.1",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{token}}"
+              }
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "[movie] delete movie by id",
+          "filename": "[movie] delete movie by id.bru",
+          "seq": 14,
+          "settings": {},
+          "tags": [],
+          "request": {
+            "url": "{{localhost}}/movies/movie/1",
+            "method": "DELETE",
+            "headers": [
+              {
+                "name": "User-Agent",
+                "value": "insomnia/10.3.1",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{token}}"
+              }
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "[movie] list all movies by category",
+          "filename": "[movie] list all movies by category.bru",
+          "seq": 13,
+          "settings": {},
+          "tags": [],
+          "request": {
+            "url": "{{localhost}}/movies/movie/search?category=1",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "User-Agent",
+                "value": "insomnia/10.3.1",
+                "enabled": true
+              }
+            ],
+            "params": [
+              {
+                "name": "category",
+                "value": "1",
+                "type": "query",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{token}}"
+              }
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "[movie] update movie by id",
+          "filename": "[movie] update movie by id.bru",
+          "seq": 12,
+          "settings": {},
+          "tags": [],
+          "request": {
+            "url": "{{localhost}}/movies/movie/2",
+            "method": "PUT",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json",
+                "enabled": true
+              },
+              {
+                "name": "User-Agent",
+                "value": "insomnia/10.3.1",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n    \"title\": \"Hehehe\",\n    \"description\": \"Ninja stuff, lots of fight\",\n    \"releaseDate\": \"11/07/2001\",\n    \"rating\": 10,\n    \"categories\": [\n      1, 2, 3, 4\n    ],\n    \"streamings\": [\n      1, 2\n    ]\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{token}}"
+              }
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "[streaming] add streaming",
+          "filename": "[streaming] add streaming.bru",
+          "seq": 5,
+          "settings": {},
+          "tags": [],
+          "request": {
+            "url": "{{localhost}}/movies/streaming",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json",
+                "enabled": true
+              },
+              {
+                "name": "User-Agent",
+                "value": "insomnia/10.3.1",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"name\": \"\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{token}}"
+              }
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "[movie] list all movies",
+          "filename": "[movie] list all movies.bru",
+          "seq": 10,
+          "settings": {},
+          "tags": [],
+          "request": {
+            "url": "{{localhost}}/movies/movie",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "User-Agent",
+                "value": "insomnia/10.3.1",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{token}}"
+              }
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "[streaming] list streaming by id",
+          "filename": "[streaming] list streaming by id.bru",
+          "seq": 7,
+          "settings": {},
+          "tags": [],
+          "request": {
+            "url": "{{localhost}}/movies/streaming/5",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "User-Agent",
+                "value": "insomnia/10.3.1",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{token}}"
+              }
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "[streaming] list all streaming",
+          "filename": "[streaming] list all streaming.bru",
+          "seq": 6,
+          "settings": {},
+          "tags": [],
+          "request": {
+            "url": "{{localhost}}/movies/streaming",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "User-Agent",
+                "value": "insomnia/10.3.1",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{token}}"
+              }
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "[user] login",
+          "filename": "[user] login.bru",
+          "seq": 16,
+          "settings": {},
+          "tags": [],
+          "request": {
+            "url": "{{localhost}}/auth/login",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json",
+                "enabled": true
+              },
+              {
+                "name": "User-Agent",
+                "value": "insomnia/10.3.1",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"email\": \"heitormbonfim@gmail.com\",\n  \"password\": \"heitormbonfim@gmail.com\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {
+              "res": "bru.setVar(\"token\", res.body.token);"
+            },
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "[user] register",
+          "filename": "[user] register.bru",
+          "seq": 15,
+          "settings": {},
+          "tags": [],
+          "request": {
+            "url": "{{localhost}}/auth/register",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json",
+                "enabled": true
+              },
+              {
+                "name": "User-Agent",
+                "value": "insomnia/10.3.1",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"name\": \"Heitor\",\n  \"email\": \"heitormbonfim@gmail.com\",\n  \"password\": \"heitormbonfim@gmail.com\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "[streaming] delete streaming by id",
+          "filename": "[streaming] delete streaming by id.bru",
+          "seq": 8,
+          "settings": {},
+          "tags": [],
+          "request": {
+            "url": "{{localhost}}/movies/streaming/4",
+            "method": "DELETE",
+            "headers": [
+              {
+                "name": "User-Agent",
+                "value": "insomnia/10.3.1",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{token}}"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "activeEnvironmentUid": "Mm4DRFKhryxqta0dSjqhV",
+  "environments": [
+    {
+      "variables": [
+        {
+          "name": "token",
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInN1YiI6Imp1bGlhbWJvbmZpbUBnbWFpbC5jb20iLCJleHAiOjE3NTM1NzYyNzYsImlhdCI6MTc1MzQ4OTg3Nn0.06DJOlinINoYgu7LI8iyRy89HNZB3_6bgeaNEgY2xdc",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "localhost",
+          "value": "http://localhost:8080",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        }
+      ],
+      "name": "movies"
+    }
+  ],
+  "brunoConfig": {
+    "version": "1",
+    "name": "Movies",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ],
+    "size": 0.00997161865234375,
+    "filesCount": 41
+  }
+}
