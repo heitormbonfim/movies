@@ -5,6 +5,7 @@ import com.movies.controller.response.CategoryResponse;
 import com.movies.entity.Category;
 import com.movies.mapper.CategoryMapper;
 import com.movies.service.CategoryService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,7 +31,7 @@ public class CategoryController {
     }
 
     @PostMapping
-    public ResponseEntity<CategoryResponse> saveCategory(@RequestBody CategoryRequest request) {
+    public ResponseEntity<CategoryResponse> saveCategory(@Valid @RequestBody CategoryRequest request) {
         Category newCategory = CategoryMapper.toCategory(request);
         Category savedCategory = categoryService.save(newCategory);
         CategoryResponse categorySaved = CategoryMapper.toCategoryResponse(savedCategory);
